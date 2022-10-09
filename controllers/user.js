@@ -8,6 +8,8 @@ export const getUser = async (req, res) =>{
         console.log(`Endpoint reached for userID: ${id} at time: ${now}`)
         const userDetail = await UserDetails.find({ uniqueID : id });
         
+        console.log(userDetail);
+
         res.status(200).json(userDetail);
     } catch(error){
         res.status(404).json({ message: error.message })
